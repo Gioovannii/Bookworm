@@ -11,7 +11,7 @@
 		7BA6D0EF2738BAE800E410B1 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BA6D0EE2738BAE800E410B1 /* ContentView.swift */; };
 		7BA6D0F12738BAE900E410B1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7BA6D0F02738BAE900E410B1 /* Assets.xcassets */; };
 		7BA6D0F42738BAE900E410B1 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7BA6D0F32738BAE900E410B1 /* Preview Assets.xcassets */; };
-		7BA6D0F62738BAE900E410B1 /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BA6D0F52738BAE900E410B1 /* Persistence.swift */; };
+		7BA6D0F62738BAE900E410B1 /* PersistenceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BA6D0F52738BAE900E410B1 /* PersistenceController.swift */; };
 		7BA6D0F92738BAE900E410B1 /* Bookworm.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 7BA6D0F72738BAE900E410B1 /* Bookworm.xcdatamodeld */; };
 		7BA6D1032738BBAF00E410B1 /* BindingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BA6D1022738BBAF00E410B1 /* BindingView.swift */; };
 		7BA6D1052738C03600E410B1 /* TypeErasureView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BA6D1042738C03600E410B1 /* TypeErasureView.swift */; };
@@ -25,7 +25,7 @@
 		7BA6D0EE2738BAE800E410B1 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		7BA6D0F02738BAE900E410B1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		7BA6D0F32738BAE900E410B1 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
-		7BA6D0F52738BAE900E410B1 /* Persistence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Persistence.swift; sourceTree = "<group>"; };
+		7BA6D0F52738BAE900E410B1 /* PersistenceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistenceController.swift; sourceTree = "<group>"; };
 		7BA6D0F82738BAE900E410B1 /* Bookworm.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Bookworm.xcdatamodel; sourceTree = "<group>"; };
 		7BA6D1022738BBAF00E410B1 /* BindingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BindingView.swift; sourceTree = "<group>"; };
 		7BA6D1042738C03600E410B1 /* TypeErasureView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TypeErasureView.swift; sourceTree = "<group>"; };
@@ -93,7 +93,7 @@
 		7BA6D1002738BB4000E410B1 /* CoreData */ = {
 			isa = PBXGroup;
 			children = (
-				7BA6D0F52738BAE900E410B1 /* Persistence.swift */,
+				7BA6D0F52738BAE900E410B1 /* PersistenceController.swift */,
 				7BA6D0F72738BAE900E410B1 /* Bookworm.xcdatamodeld */,
 			);
 			path = CoreData;
@@ -181,7 +181,7 @@
 			files = (
 				7BA6D1052738C03600E410B1 /* TypeErasureView.swift in Sources */,
 				7BA6D1072738F30E00E410B1 /* CoreDataView.swift in Sources */,
-				7BA6D0F62738BAE900E410B1 /* Persistence.swift in Sources */,
+				7BA6D0F62738BAE900E410B1 /* PersistenceController.swift in Sources */,
 				7BA6D1092739028300E410B1 /* AddBookView.swift in Sources */,
 				7BA6D0F92738BAE900E410B1 /* Bookworm.xcdatamodeld in Sources */,
 				7BA6D1032738BBAF00E410B1 /* BindingView.swift in Sources */,
