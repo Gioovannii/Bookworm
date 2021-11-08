@@ -13,7 +13,7 @@ struct BookwormApp: App {
     
     var body: some Scene {
         WindowGroup {
-            TypeErasureView()
+            CoreDataView()
                 .environment(\.managedObjectContext, persistenceController.container.viewContext)
         }
     }

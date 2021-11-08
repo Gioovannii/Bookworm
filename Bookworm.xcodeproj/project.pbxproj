@@ -15,6 +15,7 @@
 		7BA6D0F92738BAE900E410B1 /* Bookworm.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 7BA6D0F72738BAE900E410B1 /* Bookworm.xcdatamodeld */; };
 		7BA6D1032738BBAF00E410B1 /* BindingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BA6D1022738BBAF00E410B1 /* BindingView.swift */; };
 		7BA6D1052738C03600E410B1 /* TypeErasureView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BA6D1042738C03600E410B1 /* TypeErasureView.swift */; };
+		7BA6D1072738F30E00E410B1 /* CoreDataView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BA6D1062738F30E00E410B1 /* CoreDataView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -27,6 +28,7 @@
 		7BA6D0F82738BAE900E410B1 /* Bookworm.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Bookworm.xcdatamodel; sourceTree = "<group>"; };
 		7BA6D1022738BBAF00E410B1 /* BindingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BindingView.swift; sourceTree = "<group>"; };
 		7BA6D1042738C03600E410B1 /* TypeErasureView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TypeErasureView.swift; sourceTree = "<group>"; };
+		7BA6D1062738F30E00E410B1 /* CoreDataView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,6 +101,7 @@
 			children = (
 				7BA6D1022738BBAF00E410B1 /* BindingView.swift */,
 				7BA6D1042738C03600E410B1 /* TypeErasureView.swift */,
+				7BA6D1062738F30E00E410B1 /* CoreDataView.swift */,
 			);
 			path = Lecons;
 			sourceTree = "<group>";
@@ -174,6 +177,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				7BA6D1052738C03600E410B1 /* TypeErasureView.swift in Sources */,
+				7BA6D1072738F30E00E410B1 /* CoreDataView.swift in Sources */,
 				7BA6D0F62738BAE900E410B1 /* Persistence.swift in Sources */,
 				7BA6D0F92738BAE900E410B1 /* Bookworm.xcdatamodeld in Sources */,
 				7BA6D1032738BBAF00E410B1 /* BindingView.swift in Sources */,
