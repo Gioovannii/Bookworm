@@ -8,8 +8,15 @@
 import SwiftUI
 
 struct TypeErasureView: View {
+    @Environment(\.horizontalSizeClass) var sizeClass
     var body: some View {
-        Text("Hello, World!")
+        if sizeClass == .compact {
+            return HStack {
+                Text("Active size class:")
+                Text("COMPACT")
+            }
+            .font(.largeTitle)
+        }
     }
 }
 
