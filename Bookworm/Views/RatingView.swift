@@ -22,6 +22,14 @@ struct RatingView: View {
     var body: some View {
         Text("Hello, World!")
     }
+    
+    func image(for number: Int) -> Image {
+        if number > rating {
+            return offImage ?? onImage
+        } else {
+            return onImage
+        }
+    }
 }
 
 struct RatingView_Previews: PreviewProvider {
