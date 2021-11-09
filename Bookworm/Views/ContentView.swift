@@ -10,7 +10,8 @@ import CoreData
 
 struct ContentView: View {
     @Environment(\.managedObjectContext) var moc
-    @FetchRequest(entity: Book.entity(), sortDescriptors: []) var books: FetchedResults<Book>
+    @FetchRequest(entity: Book.entity(), sortDescriptors:
+                    []) var books: FetchedResults<Book>
     
     @State private var showingScreen = false
     
@@ -19,11 +20,12 @@ struct ContentView: View {
             Text("Count: \(books.count)")
                 .navigationTitle("Bookworm")
                 .navigationBarItems(trailing:
-                                        Button(action: {
-                    self.showingScreen.toggle()
-                }) {
-                    Image(systemName: "plus")
-                })
+                    Button(action: {
+                        self.showingScreen.toggle()
+                    }) {
+                        Image(systemName: "plus")
+                    }
+                )
                 .sheet(isPresented: $showingScreen) {
                     AddBookView().environment(\.managedObjectContext, self.moc)
                 }   
