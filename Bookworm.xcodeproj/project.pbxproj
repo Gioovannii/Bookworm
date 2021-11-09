@@ -19,6 +19,7 @@
 		7BA6D1092739028300E410B1 /* AddBookView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BA6D1082739028300E410B1 /* AddBookView.swift */; };
 		7BCB0A6C273A130E00EC045B /* RatingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BCB0A6B273A130E00EC045B /* RatingView.swift */; };
 		7BCB0A6E273A169C00EC045B /* EmojiRatingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BCB0A6D273A169C00EC045B /* EmojiRatingView.swift */; };
+		7BCB0A70273A494700EC045B /* DetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BCB0A6F273A494700EC045B /* DetailView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -35,6 +36,7 @@
 		7BA6D1082739028300E410B1 /* AddBookView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddBookView.swift; sourceTree = "<group>"; };
 		7BCB0A6B273A130E00EC045B /* RatingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RatingView.swift; sourceTree = "<group>"; };
 		7BCB0A6D273A169C00EC045B /* EmojiRatingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmojiRatingView.swift; sourceTree = "<group>"; };
+		7BCB0A6F273A494700EC045B /* DetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -92,6 +94,7 @@
 				7BA6D1082739028300E410B1 /* AddBookView.swift */,
 				7BCB0A6B273A130E00EC045B /* RatingView.swift */,
 				7BCB0A6D273A169C00EC045B /* EmojiRatingView.swift */,
+				7BCB0A6F273A494700EC045B /* DetailView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -190,6 +193,7 @@
 				7BA6D1072738F30E00E410B1 /* CoreDataView.swift in Sources */,
 				7BA6D0F62738BAE900E410B1 /* PersistenceController.swift in Sources */,
 				7BCB0A6C273A130E00EC045B /* RatingView.swift in Sources */,
+				7BCB0A70273A494700EC045B /* DetailView.swift in Sources */,
 				7BA6D1092739028300E410B1 /* AddBookView.swift in Sources */,
 				7BA6D0F92738BAE900E410B1 /* Bookworm.xcdatamodeld in Sources */,
 				7BA6D1032738BBAF00E410B1 /* BindingView.swift in Sources */,
