@@ -18,14 +18,14 @@ struct AddBookView: View {
     @State private var rating = 3
     @State private var genre = ""
     @State private var review = ""
-
+    
     let genres = ["Fantasy", "Horror", "Kids", "Mystery", "Poetry", "Romance", "Thriller"]
     
     var body: some View {
         NavigationView {
             Form {
                 Section {
-                    TextField("Name of book", text: $title) 
+                    TextField("Name of book", text: $title)
                     TextField("Author's name", text: $author)
                     
                     Picker("Genre", selection: $genre) {
@@ -36,12 +36,7 @@ struct AddBookView: View {
                 }
                 
                 Section {
-                    Picker("Rating", selection: $rating) {
-                        ForEach(0..<6) {
-                            Text("\($0)")
-                        }
-                    }
-                    
+                    RatingView(rating: $rating)
                     TextField("Write a review", text: $review)
                 }
                 
