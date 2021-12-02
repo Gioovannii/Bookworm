@@ -28,6 +28,7 @@ struct ContentView: View {
                         VStack(alignment: .leading) {
                             Text(book.title ?? "Unknown title")
                                 .font(.headline)
+                                .foregroundColor(book.rating == 1 ? Color(red: 1, green: 0, blue: 0) : Color.black)
                             Text(book.author ?? "Unknown author")
                                 .foregroundColor(.secondary)
                         }
