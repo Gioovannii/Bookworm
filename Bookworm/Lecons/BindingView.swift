@@ -16,7 +16,7 @@ struct PushButton: View {
     
     var body: some View {
         Button(title) {
-            self.isOn.toggle()
+            isOn.toggle()
         }
         .padding()
         .background(LinearGradient(gradient: Gradient(colors: isOn ? onColors : offColor), startPoint: .top, endPoint: .bottom))
