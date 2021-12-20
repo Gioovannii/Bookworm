@@ -10,17 +10,17 @@ import CoreData
 
 struct ContentView: View {
     @Environment(\.managedObjectContext) var moc
-    @FetchRequest(entity: Book.entity(), sortDescriptors: [
-        NSSortDescriptor(keyPath: \Book.title, ascending: true),
-        NSSortDescriptor(keyPath: \Book.author, ascending: true)
+    @FetchRequest(sortDescriptors: [
+        SortDescriptor(\Book.title),
+        SortDescriptor(\Book.author)
     ]) var books: FetchedResults<Book>
     
-    @State private var showingScreen = false
+    @State private var showingAddScreen = false
     
     var body: some View {
         NavigationView {
             List {
-                ForEach(books, id: \.self) { book in
+                ForEach(books) { book in
                     NavigationLink(destination: DetailView(book: book)) {
                         EmojiRatingView(rating: book.rating)
                             .font(.largeTitle)
@@ -34,18 +34,29 @@ struct ContentView: View {
                         }
                     }
                 }
-                .onDelete(perform: deleteBook(at:))
+                .onDelete(perform: deleteBook)
             }
             .navigationTitle("Bookworm")
-            .navigationBarItems(leading: EditButton(), trailing: Button(action: {
-                self.showingScreen.toggle()
-            }) {
-                Image(systemName: "plus")
-            })
-            .sheet(isPresented: $showingScreen) {
+            .toolbar {
+                ToolbarItem(placement: .navigationBarLeading) {
+                    EditButton()
+                }
+                
+                ToolbarItem(placement: .navigationBarTrailing) {
+                    Button {
+                        showingAddScreen.toggle()
+                    } label: {
+                        Label("Add book", systemImage: "plus")
+                    }
+                }
+            }
+            .sheet(isPresented: $showingAddScreen) {
                 AddBookView().environment(\.managedObjectContext, self.moc)
             }
+        
         }
+       
+        
     }
     
     func deleteBook(at offsets: IndexSet) {
