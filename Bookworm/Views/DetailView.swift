@@ -10,36 +10,37 @@ import SwiftUI
 
 struct DetailView: View {
     @Environment(\.managedObjectContext) var moc
-    @Environment(\.presentationMode) var presentationMode
+    @Environment(\.dismiss) var dismiss
+    
     @State private var showingDeleteAlert = false
 
     let book: Book
     
     var body: some View {
-        GeometryReader { geometry in
             VStack {
                 ZStack(alignment: .bottomTrailing) {
-                    Image(self.book.genre ?? "Fantasy")
-                        .frame(maxWidth: geometry.size.width)
+                    Image(book.genre ?? "Fantasy")
+                        .resizable()
+                        .scaledToFit()
                     
-                    Text(self.book.genre?.uppercased() ?? "FANTASY")
+                    Text(book.genre?.uppercased() ?? "FANTASY")
                         .font(.caption)
                         .fontWeight(.black)
                         .padding(8)
                         .foregroundColor(.white)
                         .background(Color.black.opacity(0.75))
                         .clipShape(Capsule())
-                        .offset(x: -9, y: -5)
+                        .offset(x: -5, y: -5)
                 }
                     
-                Text(self.book.author ?? "Unknown author")
+                Text(book.author ?? "Unknown author")
                     .font(.title)
                     .foregroundColor(.secondary)
                 
-                Text(self.book.review ?? "No review")
+                Text(book.review ?? "No review")
                     .padding()
                 
-                RatingView(rating: .constant(Int(self.book.rating)))
+                RatingView(rating: .constant(Int(book.rating)))
                     .font(.largeTitle)
                 
                 
@@ -49,26 +50,28 @@ struct DetailView: View {
                 
                 Spacer()
             }
-        }
         .navigationBarTitle(Text(book.title ?? "Unknown book"), displayMode: .inline)
-        .alert(isPresented: $showingDeleteAlert) {
-            Alert(title: Text("delete book"), message: Text("Are you sure ?"), primaryButton: .destructive(Text("Delete")){
-                self.deleteBook()
-            }, secondaryButton: .cancel())
+        .alert("Delete book ?", isPresented: $showingDeleteAlert) {
+            Button("Delete", role: .destructive, action: deleteBook)
+            Button("Cancel", role: .cancel) { }
+        } message: {
+            Text("Are you sure?")
         }
-        .navigationBarItems(trailing: Button(action: {
-            self.showingDeleteAlert = true
-        }) {
-            Image(systemName: "trash")
-        })
+        .toolbar {
+            Button {
+                showingDeleteAlert = true
+            } label: {
+                Label("Delete this book", systemImage: "trash")
+            }
+        }
     }
     
     func deleteBook () {
         moc.delete(book)
         
-        try? self.moc.save()
+        try? moc.save()
         
-        presentationMode.wrappedValue.dismiss()
+        dismiss()
     }
     
     func formatDate() -> String {
