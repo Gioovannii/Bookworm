@@ -24,11 +24,11 @@ struct RatingView: View {
             if label.isEmpty == false {
                 Text(label)
             }
-            ForEach(1..<maximumRating + 1) { number in
-                self.image(for: number)
-                    .foregroundColor(number > self.rating ? self.offColor : self.onColor)
+            ForEach(1..<maximumRating + 1, id: \.self) { number in
+                image(for: number)
+                    .foregroundColor(number > rating ? offColor : onColor)
                     .onTapGesture {
-                        self.rating = number
+                        rating = number
                     }
                     .accessibilityLabel(Text("\(number == 1 ? "1 star" : "\(number) stars")"))
                     .accessibility(removeTraits: .isImage)
@@ -48,6 +48,6 @@ struct RatingView: View {
 
 struct RatingView_Previews: PreviewProvider {
     static var previews: some View {
-        RatingView(rating: .constant(3))
+        RatingView(rating: .constant(4))
     }
 }
