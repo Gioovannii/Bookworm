@@ -9,7 +9,7 @@ import SwiftUI
 
 struct CoreDataView: View {
     @Environment(\.managedObjectContext) var moc
-    @FetchRequest(entity: Student.entity(), sortDescriptors: []) var students: FetchedResults<Student>
+    @FetchRequest(sortDescriptors: []) var students: FetchedResults<Student>
     
     var body: some View {
         VStack {
@@ -30,7 +30,7 @@ struct CoreDataView: View {
                 student.id = UUID()
                 student.name = "\(chosenFirstName) \(chosenLastName)"
                 
-                try? self.moc.save()
+                try? moc.save()
                 
             }
 //            .navigationTitle("Students")
