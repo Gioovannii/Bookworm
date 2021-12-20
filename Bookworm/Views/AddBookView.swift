@@ -8,8 +8,7 @@
 import SwiftUI
 
 struct AddBookView: View {
-    
-    @Environment(\.presentationMode) var presentationMode
+    @Environment(\.dismiss) var dismiss
     @Environment(\.managedObjectContext) var moc
     
     
@@ -36,22 +35,26 @@ struct AddBookView: View {
                 }
                 
                 Section {
+                    TextEditor(text: $review)
                     RatingView(rating: $rating)
-                    TextField("Write a review", text: $review)
+
+                } header: {
+                    Text("Write a review")
                 }
+                
                 
                 Section {
                     Button("Save") {
-                        let newBook = Book(context: self.moc)
-                        newBook.title = self.title
-                        newBook.author = self.author
-                        newBook.rating = Int16(self.rating)
-                        newBook.genre = self.genre
-                        newBook.review = self.review
+                        let newBook = Book(context: moc)
+                        newBook.title = title
+                        newBook.author = author
+                        newBook.rating = Int16(rating)
+                        newBook.genre = genre
+                        newBook.review = review
                         newBook.date = Date()
                         
-                        try? self.moc.save()
-                        self.presentationMode.wrappedValue.dismiss()
+                        try? moc.save()
+                        dismiss()
                     }
                 }
             }
